@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andreas Ström Fotografi</title>
+  <link rel="stylesheet" href="homepage.css">
+  <meta name="keywords" content="photography, portfolio, services, contact, Andreas Ström">
+  <link rel="icon" href="/favicon.ico">
+  <meta property="og:title" content="Andreas Ström Fotografi">
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="logo">
+      <h1>Andreas Ström</h1>
+      <h2>Fotografi</h2>
+    </div>
+    <div class="link">
+      <ul>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">Contact Me</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="gallery">
+    </div>
+
+  <script>
+    const galleryItems = [];
+
+    // Get images from "bilder" folder
+    const bilderFolder = './bilder';
+    for (const file of fs.readdirSync(bilderFolder)) {
+      if (file.endsWith('.jpg') || file.endsWith('.jpeg') || file.endsWith('.png')) {
+        const imageUrl = `./bilder/${file}`;
+        const galleryItem = `<div class="gallery-item">
+          <img src="${imageUrl}" alt="Mansory Car Image">
+        </div>`;
+        galleryItems.push(galleryItem);
+      }
+    }
+
+    // Add images to the gallery dynamically
+    const galleryContainer = document.querySelector('.gallery');
+    galleryContainer.innerHTML = galleryItems.join('');
+
+    // Apply Masonry layout
+    const masonry = new Masonry(galleryContainer, {
+      itemSelector: '.gallery-item',
+      columnWidth: 300,
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'Arimo';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arimo Regular'), local('Arimo-Regular'),
+        url('/fonts/Arimo-Regular.woff2') format('woff2'),
+        url('/fonts/Arimo-Regular.woff') format('woff');
+}
+
+body {
+  min-height: 100vh;
+  height: 100%;
+  background-image: url('hembild/hem.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+}
+
+.container {
+  position: absolute;
+  left: 5%;
+  transform: translateX(-50%);
+  top: 11%;
+  transform: translateY(-50%);
+}
+
+h1 {
+  font-family: sans-serif;
+  font-size: 64px;
+  margin-bottom: 5px;
+  margin-right: 20px;
+  text-align: end;
+  color: #eeeeee;
+}
+
+h2 {
+  font-family: sans-serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  text-align: end;
+  color: #fd7aa3;
+  margin-top: -2%;
+}
+p {
+  font-family: sans-serif;
+  font-size: 18px;
+  margin-right: 20px;
+  color: #eeeeee;
+}
+
+.button {
+  position: absolute;
+   right: 0;
+  margin-right: 10px;
+  margin-top: 20%;
+  -webkit-border-radius: 14;
+  -moz-border-radius: 14;
+  border-radius: 14px;
+  font-family: Arial;
+  color: #fafafa;
+  font-size: 30px;
+  background: #fd7aa4;
+  padding: 10px 30px 10px 30px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: #ff99bb;
+  text-decoration: none;
+}
+
+.logo, .button {
+  opacity: 0; /* Start with 0 opacity to hide the logo and button */
+  animation: logo-fadein 3s ease-in-out forwards, button-pulsate 1s ease-in-out infinite;
+}
+
+.button {
+  animation-delay: 1s; /* Delay the button animation by 1 seconds */
+}
+
+@keyframes logo-fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+  
+}
